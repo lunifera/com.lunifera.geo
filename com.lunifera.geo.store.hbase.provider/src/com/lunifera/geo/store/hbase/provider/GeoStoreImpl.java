@@ -36,5 +36,4 @@ public class GeoStoreImpl implements GeoStore {
 	private Iterable<SubjectLocationDTO> callREST(Filter filter, int limit) {
 		return null;
 	}
-
 }

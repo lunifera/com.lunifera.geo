@@ -1,19 +1,8 @@
 #
 # 
 #
-
-Bundle-Version:1.0.0.${tstamp}
-Bundle-Description: 				\
-	This is  project. An API project should in general not contain any \
-	implementation code.\
-	\
-	${warning;Please update this Bundle-Description in com.lunifera.geo.api/bnd.bnd}
-
-	
-Export-Package: \
-	com.lunifera.geo.api;provide:=true,\
-	com.lunifera.geo.api.dto
-
+Bundle-Version: 0.3.0.${tstamp}
+Bundle-Description: API bundle for geo location and geo hashes
 
 Require-Capability: \
 	compile-only
@@ -22,3 +11,7 @@ Require-Capability: \
 
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
+Export-Package: \
+	com.lunifera.geo.api,\
+	com.lunifera.geo.api.dto
+	
