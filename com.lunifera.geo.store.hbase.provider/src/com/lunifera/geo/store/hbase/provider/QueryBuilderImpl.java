@@ -23,12 +23,12 @@ public class QueryBuilderImpl implements QueryBuilder {
 
 	@Override
 	public FieldFilter timestamp(CompareType compareType, LocalDateTime timestamp) {
-		return new FieldFilter(GeoConstants.COL_TIMESTAMP, compareType, timestamp);
+		return new FieldFilter(GeoStoreConstants.COL_TIMESTAMP, compareType, timestamp);
 	}
 
 	@Override
 	public FieldFilter subjectId(CompareType compareType, String subjectId) {
-		return new FieldFilter(GeoConstants.COL_SUBJECT_ID, compareType, subjectId);
+		return new FieldFilter(GeoStoreConstants.COL_SUBJECT_ID, compareType, subjectId);
 	}
 
 	@Override

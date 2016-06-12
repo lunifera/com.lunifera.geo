@@ -16,4 +16,5 @@ public interface GeoStoreConstants {
 		String SPECIFICATION_VERSION = "0.3.0";
 		
 		int DFLT_QUERY_LIMIT = 100;
+		
 	}

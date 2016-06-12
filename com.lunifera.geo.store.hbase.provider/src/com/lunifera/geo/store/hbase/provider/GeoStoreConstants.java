@@ -1,6 +1,6 @@
 package com.lunifera.geo.store.hbase.provider;
 
-public interface GeoConstants extends com.lunifera.geo.store.api.GeoStoreConstants {
+public interface GeoStoreConstants extends com.lunifera.geo.store.api.GeoStoreConstants {
 
 	/**
 	 * The column family used for the geo data.
@@ -17,4 +17,9 @@ public interface GeoConstants extends com.lunifera.geo.store.api.GeoStoreConstan
 	 */
 	String COL_TIMESTAMP = "timestamp";
 
+	
+	/**
+	 * The PID to be stored with the OSGi service.
+	 */
+	String PID = "com.lunifera.geo.store.hbase";
 }
