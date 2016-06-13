@@ -16,6 +16,8 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.log.LogService;
+import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 import com.lunifera.geo.store.api.GeoStore;
 import com.lunifera.geo.store.api.dto.SubjectLocationDTO;
@@ -24,7 +26,6 @@ import com.lunifera.geo.store.api.query.Query;
 import com.lunifera.geo.store.api.query.QueryBuilder;
 
 import aQute.bnd.annotation.headers.ProvideCapability;
-import aQute.bnd.annotation.metatype.Meta;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
 
 /**
@@ -39,15 +40,15 @@ public class GeoStoreImpl extends Configured implements GeoStore {
 	private static final String HBASE_ZOOKEEPER_CLIENTPORT = "hbase.zookeeper.clientport";
 	private static final String HBASE_ZOOKEEPER_QUORUM = "hbase.zookeeper.quorum";
 
-	@Meta.OCD(description = "Configure Access to hbase")
+	@ObjectClassDefinition(description = "Configure Access to hbase")
 	@interface ClientConfiguration {
-		@Meta.AD(description = "Zookeeper URL", deflt = "localhost", required = true)
+		@AttributeDefinition(description = "Zookeeper URL", defaultValue = "localhost", required = true)
 		String zookeeperUrl() default "localhost";
 
-		@Meta.AD(description = "Zookeeper Port", deflt = "2181", required = true)
+		@AttributeDefinition(description = "Zookeeper Port", defaultValue = "2181", required = true)
 		int zookeeperPort() default 2181;
 
-		@Meta.AD(description = "Maximum records to be returned", deflt = "100", min = "1", required = true)
+		@AttributeDefinition(description = "Maximum records to be returned", defaultValue = "100", min = "1", required = true)
 		int limit() default 100;
 	}
 

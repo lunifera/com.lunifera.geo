@@ -15,3 +15,4 @@ Export-Package: \
 	com.lunifera.geo.api,\
 	com.lunifera.geo.api.dto
 	
+-runbundles: org.apache.felix.log;version='[1.0.1,1.0.2)'

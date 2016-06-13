@@ -65,16 +65,6 @@ public class GeoImpl implements Geo {
 		return getDistance(getPosition(geoHashFrom), getPosition(geoHashTo), distanceUnit);
 	}
 
-//	@Override
-//	public DistanceDTO getShortedDistance(PositionDTO from, Collection<PositionDTO> to, Unit distanceUnit) {
-//		return null;
-//	}
-//
-//	@Override
-//	public DistanceDTO getLongestDistance(PositionDTO from, Collection<PositionDTO> to, Unit distanceUnit) {
-//		return null;
-//	}
-
 	@Override
 	public List<DistanceDTO> getDistances(PositionDTO from, Collection<PositionDTO> to, Unit distanceUnit) {
 		

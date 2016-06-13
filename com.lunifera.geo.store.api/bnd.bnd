@@ -5,11 +5,9 @@
 Bundle-Version: 0.3.0.${tstamp}
 Bundle-Description: 				\
 	API for the Lunifera Geo store.\
-
 	
 Export-Package: \
-	com.lunifera.geo.api,\
-	com.lunifera.geo.store.api;provide:=true,\
+	com.lunifera.geo.store.api,\
 	com.lunifera.geo.store.api.dto,\
 	com.lunifera.geo.store.api.query
 
@@ -22,3 +20,4 @@ Require-Capability: \
 
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
+-runbundles: org.apache.felix.log;version='[1.0.1,1.0.2)'

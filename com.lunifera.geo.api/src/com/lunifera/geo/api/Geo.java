@@ -51,28 +51,6 @@ public interface Geo {
 	 */
 	DistanceDTO getDistance(String geoHashFrom, String geoHashTo, Unit distanceUnit);
 
-//	/**
-//	 * Returns the shorted distance for the given from and to positions
-//	 * converted to the distanceUnit.
-//	 * 
-//	 * @param from
-//	 * @param to
-//	 * @param distanceUnit
-//	 * @return
-//	 */
-//	DistanceDTO getShortedDistance(PositionDTO from, Collection<PositionDTO> to, Unit distanceUnit);
-//
-//	/**
-//	 * Returns the longest distance for the given from and to positions
-//	 * converted to the distanceUnit.
-//	 * 
-//	 * @param from
-//	 * @param to
-//	 * @param distanceUnit
-//	 * @return
-//	 */
-//	DistanceDTO getLongestDistance(PositionDTO from, Collection<PositionDTO> to, Unit distanceUnit);
-
 	/**
 	 * Returns the all distances for the given from and to positions converted
 	 * to the distanceUnit.
