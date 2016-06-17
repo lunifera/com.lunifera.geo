@@ -17,6 +17,7 @@ import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.log.LogService;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 import com.lunifera.geo.store.api.GeoStore;
@@ -24,6 +25,7 @@ import com.lunifera.geo.store.api.dto.SubjectLocationDTO;
 import com.lunifera.geo.store.api.query.Filter;
 import com.lunifera.geo.store.api.query.Query;
 import com.lunifera.geo.store.api.query.QueryBuilder;
+import com.lunifera.geo.store.hbase.provider.GeoStoreImpl.ClientConfiguration;
 
 import aQute.bnd.annotation.headers.ProvideCapability;
 import osgi.enroute.configurer.api.RequireConfigurerExtender;
@@ -32,9 +34,9 @@ import osgi.enroute.configurer.api.RequireConfigurerExtender;
  * Implementation for the geo store based on hbase.
  */
 @RequireConfigurerExtender
+@Designate(ocd=ClientConfiguration.class, factory=false)
 @ProvideCapability(ns = ImplementationNamespace.IMPLEMENTATION_NAMESPACE, name = GeoStoreConstants.SPECIFICATION_NAME, version = GeoStoreConstants.SPECIFICATION_VERSION)
-@Component(name = "com.lunifera.geo.store.hbase", property = { "storetype=hbase", "service.pid="
-		+ GeoStoreConstants.PID }, configurationPolicy = ConfigurationPolicy.REQUIRE, configurationPid = GeoStoreConstants.PID)
+@Component(name = "com.lunifera.geo.store.hbase", property = { "storetype=hbase" }, configurationPolicy = ConfigurationPolicy.OPTIONAL)
 public class GeoStoreImpl extends Configured implements GeoStore {
 
 	private static final String HBASE_ZOOKEEPER_CLIENTPORT = "hbase.zookeeper.clientport";
@@ -60,6 +62,10 @@ public class GeoStoreImpl extends Configured implements GeoStore {
 	private Configuration conf;
 	private Connection connection;
 
+	public GeoStoreImpl() {
+		
+	}
+	
 	@Override
 	public QueryBuilder createBuilder(Map<Object, Object> properties) {
 		return new QueryBuilderImpl();

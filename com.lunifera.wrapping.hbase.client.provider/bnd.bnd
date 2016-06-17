@@ -1,146 +1,334 @@
 #
 #  BUNDLE 
 #
-
-
-Bundle-Version:					1.0.0.${tstamp}
+Bundle-Version:					0.3.0.${tstamp}
 Bundle-Description: 				\
-	Wraps hbase-client, hadoop-client and a lot of third party jars for OSGi
-
-Private-Package:  \
 	com.lunifera.wrapping.hbase.client.provider
 
+
+-buildpath: \
+	osgi.enroute.base.api;version=1.0,\
+	ant__ant;version=1.6.5,\
+	antlr__antlr;version=2.7.7,\
+	aopalliance__aopalliance;version=1.0.0,\
+	asm__asm;version=3.1.0,\
+	avro;version=1.8.0,\
+	cglib__cglib-nodep;version=2.2.0,\
+	com.github.stephenc.findbugs__findbugs-annotations;version=1.3.9.1,\
+	com.google.code.findbugs__jsr305;version=1.3.9,\
+	com.google.gson;version=2.2.4,\
+	com.google.guava__guava-bootstrap;version=11.0.2,\
+	com.google.guava__guava;version=11.0.2,\
+	com.google.guava;version=16.0.1,\
+	com.google.inject;version=3.0.0,\
+	com.google.inject.assistedinject;version=4.0.0.beta5,\
+	com.google.inject.servlet;version=3.0.0,\
+	com.google.protobuf;version=2.5.0,\
+	com.jamesmurty.utils__java-xmlbuilder;version=0.4.0,\
+	com.jcraft__jsch;version=0.1.42,\
+	com.sun.jersey.contribs__jersey-guice;version=1.9.0,\
+	com.sun.jersey.jersey-client;version=1.9.0,\
+	com.sun.jersey.jersey-core;version=1.9.0,\
+	com.sun.jersey.jersey-json;version=1.9.0,\
+	com.sun.jersey.jersey-server;version=1.9.0,\
+	com.thoughtworks.paranamer__paranamer;version=2.3.0,\
+	com.thoughtworks.paranamer;version=2.7.0,\
+	com.yammer.metrics__metrics-core;version=2.2.0,\
+	commons-beanutils__commons-beanutils-core;version=1.8.0,\
+	commons-beanutils__commons-beanutils;version=1.7.0,\
+	commons-digester__commons-digester;version=1.8.0,\
+	commons-el__commons-el;version=1.0.0,\
+	commons-httpclient__commons-httpclient;version=3.1.0,\
+	commons-logging__commons-logging;version=1.1.1,\
+	commons-net__commons-net;version=1.4.1,\
+	curator-client;version=2.7.1,\
+	curator-framework;version=2.7.1,\
+	curator-recipes;version=2.7.1,\
+	dom4j__dom4j;version=1.6.1,\
+	findbugs__annotations;version=1.0.0,\
+	hsqldb__hsqldb;version=1.8.0.10,\
+	io.netty__netty-all;version=4.0.23.Final,\
+	jackson-core-asl;version=1.8.8,\
+	jackson-jaxrs;version=1.8.3,\
+	jackson-mapper-asl;version=1.8.8,\
+	jackson-xc;version=1.8.3,\
+	javassist;version=3.20.0.GA,\
+	javax.activation__activation;version=1.1.0,\
+	javax.inject__javax.inject;version=1.0.0,\
+	javax.mail__mail;version=1.4.0,\
+	javax.persistence__persistence-api;version=1.0.0,\
+	javax.servlet__jsp-api;version=2.0.0,\
+	javax.servlet__servlet-api;version=2.5.0,\
+	javax.servlet-api;version=3.0.1,\
+	javax.servlet.jsp__jsp-api;version=2.1.0,\
+	javax.transaction__jta;version=1.1.0,\
+	javax.ws.rs.jsr311-api;version=1.1.1,\
+	javax.xml.bind__jaxb-api;version=2.1.0,\
+	javax.xml.stream__stax-api;version=1.0.0.2,\
+	jdiff__jdiff;version=1.0.9,\
+	jspapi__jsp-api;version=2.0.0.20040521,\
+	junit__junit;version=4.7.0,\
+	log4j;version=1.2.17,\
+	net.java.dev.jets3t__jets3t;version=0.9.0,\
+	net.sf.ehcache__ehcache-core;version=2.4.4,\
+	org.apache.ant__ant;version=1.8.1,\
+	org.apache.avro__avro;version=1.7.4,\
+	org.apache.commons.cli;version=1.2.0,\
+	org.apache.commons.codec;version=1.4.0,\
+	org.apache.commons.collections;version=3.2.2,\
+	org.apache.commons.compress;version=1.4.1,\
+	org.apache.commons.configuration;version=1.6.0,\
+	org.apache.commons.daemon;version=1.0.13,\
+	org.apache.commons.io;version=2.4.0,\
+	org.apache.commons.lang;version=2.6.0,\
+	org.apache.commons.logging;version=1.1.3,\
+	org.apache.commons.math;version=2.1.0,\
+	org.apache.commons.math3;version=3.1.1,\
+	org.apache.commons.net;version=3.1.0,\
+	org.apache.directory.api.asn1.api;version=1.0.0.M20,\
+	org.apache.directory.api.asn1.ber;version=1.0.0.M20,\
+	org.apache.directory.api.i18n;version=1.0.0.M20,\
+	org.apache.directory.api.ldap.model;version=1.0.0.M20,\
+	org.apache.directory.api.util;version=1.0.0.M20,\
+	org.apache.directory.server.i18n;version=2.0.0.M15,\
+	org.apache.directory.server.kerberos.codec;version=2.0.0.M15,\
+	org.apache.hadoop__hadoop-annotations;version=2.7.2,\
+	org.apache.hadoop__hadoop-auth;version=2.7.2,\
+	org.apache.hadoop__hadoop-common;version=2.7.2,\
+	org.apache.hadoop__hadoop-core;version=1.2.1,\
+	org.apache.hadoop__hadoop-hdfs;version=2.7.2,\
+	org.apache.hadoop__hadoop-mapreduce-client-app,\
+	org.apache.hadoop__hadoop-mapreduce-client-common;version=2.7.2,\
+	org.apache.hadoop__hadoop-mapreduce-client-core;version=2.7.2,\
+	org.apache.hadoop__hadoop-mapreduce-client-jobclient,\
+	org.apache.hadoop__hadoop-mapreduce-client-shuffle,\
+	org.apache.hadoop.zookeeper,\
+	org.apache.hbase__hbase-annotations;version=1.2.1,\
+	org.apache.hbase__hbase-client;version=1.2.1,\
+	org.apache.hbase__hbase-common;version=1.2.1,\
+	org.apache.hbase__hbase-hadoop-compat;version=1.2.1,\
+	org.apache.hbase__hbase-protocol;version=1.2.1,\
+	org.apache.htrace__htrace-core;version=3.1.0.incubating,\
+	org.apache.httpcomponents__httpclient;version=4.1.2,\
+	org.apache.httpcomponents__httpcore;version=4.1.2,\
+	org.apache.mina.core;version=2.0.7,\
+	org.apache.openejb.javaee-api;version=5.0.0.2,\
+	org.codehaus.jettison.jettison;version=1.1.0,\
+	org.easymock;version=2.5.2,\
+	org.easymock.classextension;version=2.5.2,\
+	org.eclipse.jdt.core;version=3.1.1,\
+	org.fusesource.hawtjni__hawtjni-runtime;version=1.9.0,\
+	org.glassfish.javax.annotation;version=3.1.0,\
+	org.glassfish.javax.ejb;version=3.1.0,\
+	org.glassfish.javax.servlet;version=3.0.0,\
+	org.glassfish.javax.transaction;version=3.1.0,\
+	org.hamcrest__hamcrest-core;version=1.3.0,\
+	org.hibernate__hibernate-core;version=3.5.1.Final,\
+	org.iq80.leveldb__leveldb-api;version=0.6.0,\
+	org.jboss__jboss-common-core;version=2.0.5.GA,\
+	org.jboss.javaee__jboss-jacc-api_JDK4;version=1.1.0,\
+	org.jboss.netty;version=3.6.2.Final,\
+	org.jboss.weld.osgi-bundle;version=1.0.1.Final,\
+	org.jruby.jcodings__jcodings;version=1.0.8,\
+	org.jruby.joni__joni;version=2.1.2,\
+	org.mockito.mockito-all;version=1.10.8,\
+	org.mortbay.jetty.jsp-2.1;version=6.1.14,\
+	org.mortbay.jetty.jsp-api-2.1;version=6.1.14,\
+	org.mortbay.jetty.server;version=6.1.26,\
+	org.mortbay.jetty.servlet-api-2.5;version=6.1.14,\
+	org.mortbay.jetty.servlet-api;version=2.5.0.20081211,\
+	org.mortbay.jetty.util;version=6.1.26,\
+	org.objenesis;version=1.2.0,\
+	org.osgi__osgi_R4_core;version=1.0.0,\
+	org.ow2.asm__asm;version=4.0.0,\
+	org.sonatype.sisu.inject__cglib;version=2.2.1.v20090111,\
+	org.tukaani__xz;version=1.0.0,\
+	org.tukaani.xz;version=1.5.0,\
+	org.xerial.snappy.snappy-java;version=1.0.4.1,\
+	oro__oro;version=2.0.8,\
+	osgi.core;version=4.3.0,\
+	slf4j.api;version=1.7.10,\
+	slf4j.jdk14;version=1.6.1,\
+	slf4j.log4j12;version=1.7.10,\
+	stax__stax-api;version=1.0.1,\
+	tomcat__jasper-compiler;version=5.5.12,\
+	tomcat__jasper-runtime;version=5.5.12,\
+	xalan__xalan;version=2.7.0,\
+	xerces__xercesImpl;version=2.9.1,\
+	xml-apis__xml-apis;version=1.0.0.b2,\
+	xmlenc__xmlenc;version=0.52.0
+	
+-runsystempackages: \
+	javax.crypto.*, \
+	com.sun.security.auth.module.*, \
+	javax.management.*, \
+	javax.security.*
+	
 -testpath: \
 	osgi.enroute.junit.wrapper;version=4.12
 
--buildpath: \
-	org.apache.directory.server.i18n;version=2.0.0.M9,\
-	org.apache.directory.server.kerberos.codec;version=2.0.0.M9,\
-	org.apache.directory.api.i18n;version=1.0.0.M33,\
-	org.apache.directory.shared.asn1.api;version=1.0.0.M9,\
-	org.apache.directory.api.util;version=1.0.0.M33,\
-	avro;version=1.7.7,\
-	org.apache.hadoop__hadoop-annotations;version=2.7.1,\
-	org.apache.hadoop__hadoop-auth;version=2.7.1,\
-	org.apache.hadoop__hadoop-common;version=2.7.1,\
-	com.google.protobuf;version=2.5.0,\
-	org.apache.hbase__hbase-protocol;version=1.2.1,\
-	org.apache.hbase__hbase-annotations;version=1.2.1,\
-	org.apache.hbase__hbase-common;version=1.2.1,\
-	org.apache.hbase__hbase-client;version=1.2.1,\
-	com.jcraft__jsch,\
-	com.jcraft__jzlib;version=1.1.3,\
-	org.apache.hadoop.zookeeper;version=3.4.5.v20121214-1350,\
-	io.netty__netty-all;version=4.1.0.CR7,\
-	jackson-core-asl;version=1.9.13,\
-	jackson-mapper-asl;version=1.9.13,\
-	org.tukaani.xz;version=1.5.0,\
-	log4j;version=1.2,\
-	org.apache.commons.math3;version=3.1.1,\
-	org.apache.commons.logging;version=1.1.3,\
-	org.apache.commons.configuration;version=1.6.0,\
-	org.apache.logging.log4j.api;version=2.5.0,\
-	org.apache.servicemix.bundles.commons-beanutils;version=1.8.3.2,\
-	org.apache.servicemix.bundles.commons-codec;version=1.3.0.5,\
-	org.apache.servicemix.bundles.commons-collections;version=3.2.1.3,\
-	org.apache.servicemix.bundles.commons-configuration;version=1.9.0.2,\
-	org.apache.servicemix.bundles.commons-digester;version=1.8.0.4,\
-	org.apache.servicemix.bundles.commons-httpclient;version=3.1.0.7,\
-	org.apache.servicemix.bundles.commons-io;version=1.4.0.3,\
-	org.apache.servicemix.bundles.commons-lang;version=2.4.0.6,\
-	org.apache.servicemix.bundles.commons-pool;version=1.5.4.4,\
-	antlr__antlr,\
-	org.apache.htrace__htrace-core
-
--includeresource: {readme.md} ,\
-	{resources/hbase-default.xml}
-
+-includeresource: {readme.md}, \
+	{resources/hbase-default.xml}, \
+	@ant__ant-1.6.5.jar, \
+	@antlr__antlr-2.7.7.jar, \
+	@aopalliance__aopalliance-1.0.0.jar, \
+	@asm__asm-3.1.0.jar, \
+	@avro-1.8.0.jar, \
+	@cglib__cglib-nodep-2.2.0.jar, \
+	@com.github.stephenc.findbugs__findbugs-annotations-1.3.9.1.jar, \
+	@com.google.code.findbugs__jsr305-1.3.9.jar, \
+	@com.google.gson-2.2.4.jar, \
+	@com.google.guava__guava-bootstrap-11.0.2.jar, \
+	@com.google.guava__guava-11.0.2.jar, \
+	@com.google.guava-16.0.1.jar, \
+	@com.google.inject-3.0.0.jar, \
+	@com.google.inject.assistedinject-4.0.0.beta5.jar, \
+	@com.google.inject.servlet-3.0.0.jar, \
+	@com.google.protobuf-2.5.0.jar, \
+	@com.jamesmurty.utils__java-xmlbuilder-0.4.0.jar, \
+	@com.jcraft__jsch-0.1.42.jar, \
+	@com.sun.jersey.contribs__jersey-guice-1.9.0.jar, \
+	@com.sun.jersey.jersey-client-1.9.0.jar, \
+	@com.sun.jersey.jersey-core-1.9.0.jar, \
+	@com.sun.jersey.jersey-json-1.9.0.jar, \
+	@com.sun.jersey.jersey-server-1.9.0.jar, \
+	@com.thoughtworks.paranamer__paranamer-2.3.0.jar, \
+	@com.thoughtworks.paranamer-2.7.0.jar, \
+	@com.yammer.metrics__metrics-core-2.2.0.jar, \
+	@commons-beanutils__commons-beanutils-core-1.8.0.jar, \
+	@commons-beanutils__commons-beanutils-1.7.0.jar, \
+	@commons-digester__commons-digester-1.8.0.jar, \
+	@commons-el__commons-el-1.0.0.jar, \
+	@commons-httpclient__commons-httpclient-3.1.0.jar, \
+	@commons-logging__commons-logging-1.1.1.jar, \
+	@commons-net__commons-net-1.4.1.jar, \
+	@curator-client-2.7.1.jar, \
+	@curator-framework-2.7.1.jar, \
+	@curator-recipes-2.7.1.jar, \
+	@dom4j__dom4j-1.6.1.jar, \
+	@findbugs__annotations-1.0.0.jar, \
+	@hsqldb__hsqldb-1.8.0.10.jar, \
+	@io.netty__netty-all-4.0.23.Final.jar, \
+	@jackson-core-asl-1.8.8.jar, \
+	@jackson-jaxrs-1.8.3.jar, \
+	@jackson-mapper-asl-1.8.8.jar, \
+	@jackson-xc-1.8.3.jar, \
+	@javassist-3.20.0.GA.jar, \
+	@javax.activation__activation-1.1.0.jar, \
+	@javax.inject__javax.inject-1.0.0.jar, \
+	@javax.mail__mail-1.4.0.jar, \
+	@javax.persistence__persistence-api-1.0.0.jar, \
+	@javax.servlet__jsp-api-2.0.0.jar, \
+	@javax.servlet__servlet-api-2.5.0.jar, \
+	@javax.servlet-api-3.0.1.jar, \
+	@javax.servlet.jsp__jsp-api-2.1.0.jar, \
+	@javax.transaction__jta-1.1.0.jar, \
+	@javax.ws.rs.jsr311-api-1.1.1.jar, \
+	@javax.xml.bind__jaxb-api-2.1.0.jar, \
+	@javax.xml.stream__stax-api-1.0.0.2.jar, \
+	@jdiff__jdiff-1.0.9.jar, \
+	@jspapi__jsp-api-2.0.0.20040521.jar, \
+	@junit__junit-4.7.0.jar, \
+	@log4j-1.2.17.jar, \
+	@net.java.dev.jets3t__jets3t-0.9.0.jar, \
+	@net.sf.ehcache__ehcache-core-2.4.4.jar, \
+	@org.apache.ant__ant-1.8.1.jar, \
+	@org.apache.avro__avro-1.7.4.jar, \
+	@org.apache.commons.cli-1.2.0.jar, \
+	@org.apache.commons.codec-1.4.0.jar, \
+	@org.apache.commons.collections-3.2.2.jar, \
+	@org.apache.commons.compress-1.4.1.jar, \
+	@org.apache.commons.configuration-1.6.0.jar, \
+	@org.apache.commons.daemon-1.0.13.jar, \
+	@org.apache.commons.io-2.4.0.jar, \
+	@org.apache.commons.lang-2.6.0.jar, \
+	@org.apache.commons.logging-1.1.3.jar, \
+	@org.apache.commons.math-2.1.0.jar, \
+	@org.apache.commons.math3-3.1.1.jar, \
+	@org.apache.commons.net-3.1.0.jar, \
+	@org.apache.directory.api.asn1.api-1.0.0.M20.jar, \
+	@org.apache.directory.api.asn1.ber-1.0.0.M20.jar, \
+	@org.apache.directory.api.i18n-1.0.0.M20.jar, \
+	@org.apache.directory.api.ldap.model-1.0.0.M20.jar, \
+	@org.apache.directory.api.util-1.0.0.M20.jar, \
+	@org.apache.directory.server.i18n-2.0.0.M15.jar, \
+	@org.apache.directory.server.kerberos.codec-2.0.0.M15.jar, \
+	@org.apache.hadoop__hadoop-annotations-2.7.2.jar, \
+	@org.apache.hadoop__hadoop-auth-2.7.2.jar, \
+	@org.apache.hadoop__hadoop-common-2.7.2.jar, \
+	@org.apache.hadoop__hadoop-core-1.2.1.jar, \
+	@org.apache.hadoop__hadoop-hdfs-2.7.2.jar, \
+	@org.apache.hadoop__hadoop-mapreduce-client-app-2.5.1.jar, \
+	@org.apache.hadoop__hadoop-mapreduce-client-common-2.7.2.jar, \
+	@org.apache.hadoop__hadoop-mapreduce-client-core-2.7.2.jar, \
+	@org.apache.hadoop__hadoop-mapreduce-client-jobclient-2.5.1.jar, \
+	@org.apache.hadoop__hadoop-mapreduce-client-shuffle-2.5.1.jar, \
+	@org.apache.hadoop.zookeeper-3.4.5.v20121214-1350.jar, \
+	@org.apache.hbase__hbase-annotations-1.2.1.jar, \
+	@org.apache.hbase__hbase-client-1.2.1.jar, \
+	@org.apache.hbase__hbase-common-1.2.1.jar, \
+	@org.apache.hbase__hbase-hadoop-compat-1.2.1.jar, \
+	@org.apache.hbase__hbase-protocol-1.2.1.jar, \
+	@org.apache.htrace__htrace-core-3.1.0.incubating.jar, \
+	@org.apache.httpcomponents__httpclient-4.1.2.jar, \
+	@org.apache.httpcomponents__httpcore-4.1.2.jar, \
+	@org.apache.mina.core-2.0.7.jar, \
+	@org.apache.openejb.javaee-api-5.0.0.2.jar, \
+	@org.codehaus.jettison.jettison-1.1.0.jar, \
+	@org.easymock-2.5.2.jar, \
+	@org.easymock.classextension-2.5.2.jar, \
+	@org.eclipse.jdt.core-3.1.1.jar, \
+	@org.fusesource.hawtjni__hawtjni-runtime-1.9.0.jar, \
+	@org.glassfish.javax.annotation-3.1.0.jar, \
+	@org.glassfish.javax.ejb-3.1.0.jar, \
+	@org.glassfish.javax.servlet-3.0.0.jar, \
+	@org.glassfish.javax.transaction-3.1.0.jar, \
+	@org.hamcrest__hamcrest-core-1.3.0.jar, \
+	@org.hibernate__hibernate-core-3.5.1.Final.jar, \
+	@org.iq80.leveldb__leveldb-api-0.6.0.jar, \
+	@org.jboss__jboss-common-core-2.0.5.GA.jar, \
+	@org.jboss.javaee__jboss-jacc-api_JDK4-1.1.0.jar, \
+	@org.jboss.netty-3.6.2.Final.jar, \
+	@org.jboss.weld.osgi-bundle-1.0.1.Final.jar, \
+	@org.jruby.jcodings__jcodings-1.0.8.jar, \
+	@org.jruby.joni__joni-2.1.2.jar, \
+	@org.mockito.mockito-all-1.10.8.jar, \
+	@org.mortbay.jetty.jsp-2.1-6.1.14.jar, \
+	@org.mortbay.jetty.jsp-api-2.1-6.1.14.jar, \
+	@org.mortbay.jetty.server-6.1.26.jar, \
+	@org.mortbay.jetty.servlet-api-2.5-6.1.14.jar, \
+	@org.mortbay.jetty.servlet-api-2.5.0.20081211.jar, \
+	@org.mortbay.jetty.util-6.1.26.jar, \
+	@org.objenesis-1.2.0.jar, \
+	@org.osgi__osgi_R4_core-1.0.0.jar, \
+	@org.ow2.asm__asm-4.0.0.jar, \
+	@org.sonatype.sisu.inject__cglib-2.2.1.v20090111.jar, \
+	@org.tukaani__xz-1.0.0.jar, \
+	@org.tukaani.xz-1.5.0.jar, \
+	@org.xerial.snappy.snappy-java-1.0.4.1.jar, \
+	@oro__oro-2.0.8.jar, \
+	@osgi.core-4.3.0.jar, \
+	@slf4j.api-1.7.10.jar, \
+	@slf4j.jdk14-1.6.1.jar, \
+	@slf4j.log4j12-1.7.10.jar, \
+	@stax__stax-api-1.0.1.jar, \
+	@tomcat__jasper-compiler-5.5.12.jar, \
+	@tomcat__jasper-runtime-5.5.12.jar, \
+	@xalan__xalan-2.7.0.jar, \
+	@xerces__xercesImpl-2.9.1.jar, \
+	@xml-apis__xml-apis-1.0.0.b2.jar, \
+	@xmlenc__xmlenc-0.52.0.jar
+	
 -runrequires:  \
 	osgi.identity;filter:='(osgi.identity=com.lunifera.wrapping.hbase.client.provider)'
-
--runsystempackages: com.sun.security.auth.module;version=0
-
+	
 -runbundles: \
-	com.google.gson;version='[2.2.4,2.2.5)',\
-	com.google.guava;version='[16.0.1,16.0.2)',\
 	com.lunifera.wrapping.hbase.client.provider;version=snapshot,\
-	jackson-core-asl;version='[1.9.13,1.9.14)',\
-	jackson-mapper-asl;version='[1.9.13,1.9.14)',\
-	javax.ws.rs.jsr311-api;version='[1.1.1,1.1.2)',\
-	log4j;version='[1.2.17,1.2.18)',\
-	org.apache.commons.cli;version='[1.2.0,1.2.1)',\
-	org.apache.commons.codec;version='[1.9.0,1.9.1)',\
-	org.apache.commons.collections;version='[3.2.2,3.2.3)',\
-	org.apache.commons.compress;version='[1.4.1,1.4.2)',\
-	org.apache.commons.io;version='[2.4.0,2.4.1)',\
-	org.apache.commons.lang;version='[2.6.0,2.6.1)',\
-	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
-	org.apache.commons.math3;version='[3.1.1,3.1.2)',\
-	org.apache.commons.net;version='[3.1.0,3.1.1)',\
-	org.apache.felix.http.servlet-api;version='[1.1.2,1.1.3)',\
-	org.apache.felix.log;version='[1.0.1,1.0.2)',\
-	org.apache.servicemix.bundles.commons-configuration;version='[1.9.0,1.9.1)',\
-	org.apache.servicemix.bundles.commons-httpclient;version='[3.1.0,3.1.1)',\
-	org.apache.servicemix.bundles.paranamer;version='[2.8.0,2.8.1)',\
-	org.tukaani.xz;version='[1.5.0,1.5.1)',\
-	slf4j.api;version='[1.7.10,1.7.11)',\
-	slf4j.api;version='[1.7.21,1.7.22)'
-
-Export-Package: org.apache.hadoop, org.apache.hadoop.*
-
-Bundle-License: \
-	http://www.apache.org/licenses/LICENSE-2.0; \
-		description='For making OSGi compatible by Lunifera'; \
-		link='', \
-	http://www.apache.org/licenses/LICENSE-2.0; \
-		description='For Apache Hbase and Hadoop'; \
-		link='', \
+	org.apache.felix.log;version='[1.0.1,1.0.2)'
 
 Import-Package: \
-	!org.apache.hadoop.*,\
-	com.yammer.*;resolution:=optional,\
-	!com.sun.management,\
-	!sun.misc,\
-	!sun.net.util,\
-	!org.mortbay.*;resolution:=optional,\
-	!sun.nio.ch,\
-	!sun.net.dns,\
-	com.sun.tools.doclets.standard;resolution:=optional,\
-	com.sun.jndi.ldap;resolution:=optional,\
-	com.sun.jersey.spi.container.servlet;resolution:=optional,\
-	com.sun.jdmk.comm;resolution:=optional,\
-	com.sun.javadoc;resolution:=optional,\
-	javassist;resolution:=optional,\
-	jdiff;resolution:=optional,\
-	jline;resolution:=optional,\
-	com.ibm.uvm.*;resolution:=optional,\
-	org.apache.htrace;resolution:=optional,\
-	org.ietf.jgss.*;resolution:=optional,\
-	org.joni.*;resolution:=optional,\
-	org.jcodings.*;resolution:=optional,\
-	org.jboss.*;resolution:=optional,\
-	org.xerial.*;resolution:=optional,\
-	org.apache.tools.ant*;resolution:=optional,\
-	org.apache.mina.*;resolution:=optional,\
-	org.apache.http.client.*;resolution:=optional,\
-	org.apache.http;resolution:=optional,\
-	org.apache.curator.*;resolution:=optional,\
-	org.apache.directory.api.*;resolution:=optional,\
-	org.znerd.*;resolution:=optional,\
-	com.google.common.annotations,\
-	org.apache.log;resolution:=optional,\
-	org.apache.avalon.framework.logger;resolution:=optional,\
-	com.sun.security.auth.module,\
-	*
-
--conditionalpackage: \
-	!javax.*, \
-	!org.xml.*,\
-	!org.w3c.*, \
-	!org.ietf.jgss, \
-	!org.omg.*, \
-	!org.tukaani.xz.*, \
-	!org.apache.commons.*, \
-	!org.codehaus.jackson.*, \
-	com.sun.security.auth.module, \
-	*
+	!com.sun.javadoc,\
+	!com.sun.tools.doclets.standard,\
+	!com.ibm.uvm.tools,\
+	!com.google.inject.internal.asm.util,\
+	!*

@@ -1,7 +1,7 @@
 package com.lunifera.geo.store.hbase.provider;
 
 public interface GeoStoreConstants extends com.lunifera.geo.store.api.GeoStoreConstants {
-
+ 
 	/**
 	 * The column family used for the geo data.
 	 */

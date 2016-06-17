@@ -1,3 +1,413 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="0" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1466075823130" name="Untitled" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.geo.api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="0.3.0.201606161115"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="1a8d609ecefeb323bccf6826a102ad7db83cbeec1d543b53a88fb3e610893364"/>
+      <attribute name="url" value="com.lunifera.geo.api/com.lunifera.geo.api-0.3.0.jar"/>
+      <attribute name="size" type="Long" value="8694"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.geo.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.geo.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.api"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+      <directive name="uses" value="com.lunifera.geo.api.dto"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.api.dto"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+      <directive name="uses" value="org.osgi.dto"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.api.dto)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="compile-only"/>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.geo.jgeohash.provider.test"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="1.0.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="03e6f55ea9cd413a9f8ca0abdbd9535d29f7077a8e5b3f5a32d1e7ad2fdc7a05"/>
+      <attribute name="url" value="com.lunifera.geo.jgeohash.provider.test/com.lunifera.geo.jgeohash.provider.test-1.0.0.jar"/>
+      <attribute name="size" type="Long" value="5554"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.geo.jgeohash.provider.test"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.geo.jgeohash.provider.test"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201606161116"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.api)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.api.dto)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=junit.framework)(version&gt;=4.12.0)(!(version&gt;=5.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit)(version&gt;=4.12.0)(!(version&gt;=5.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.geo.jgeohash.provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="0.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="dc0fba7341d2a6188c70345f429413666e08b39ea666b8149c23827ba998fc05"/>
+      <attribute name="url" value="com.lunifera.geo.jgeohash.provider/com.lunifera.geo.jgeohash.provider-0.3.0.jar"/>
+      <attribute name="size" type="Long" value="14509"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.geo.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.geo.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.api"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+      <directive name="uses" value="com.lunifera.geo.api.dto"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.api.dto"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+      <directive name="uses" value="org.osgi.dto"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="com.lunifera.geo.api.Geo"/>
+    </capability>
+    <capability namespace="osgi.implementation">
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="osgi.implementation" value="org.lunifera.geo"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="com.lunifera.geo.api.Geo"/>
+      <attribute name="impl" value="jgeohash"/>
+      <directive name="uses" value="com.lunifera.geo.api"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.api)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.api.dto)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.alpharogroup.jgeohash)(version&gt;=2.3.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.alpharogroup.jgeohash.api)(version&gt;=2.3.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.alpharogroup.jgeohash.distance)(version&gt;=2.3.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.geo.store.api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="0.3.0.201606161115"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="91c12da983def04929d45d7a67a6c5eb0124d970d2757daee530a3ad65e1eeeb"/>
+      <attribute name="url" value="com.lunifera.geo.store.api/com.lunifera.geo.store.api-0.3.0.jar"/>
+      <attribute name="size" type="Long" value="25542"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.geo.store.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.geo.store.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.store.api"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.store.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+      <directive name="uses" value="com.lunifera.geo.store.api.dto,com.lunifera.geo.store.api.query"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.store.api.dto"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.store.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+      <directive name="uses" value="com.lunifera.geo.api.dto,org.osgi.dto"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.store.api.query"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.store.api"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161115"/>
+      <directive name="uses" value="com.lunifera.geo.store.api.dto"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.api.dto)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api.dto)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api.query)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="compile-only"/>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.geo.store.hbase.provider.test"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="1.0.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="3b42de1e10450bf67fd5f73cb53ab564d49770613643691ed745140b80867c7d"/>
+      <attribute name="url" value="com.lunifera.geo.store.hbase.provider.test/com.lunifera.geo.store.hbase.provider.test-1.0.0.jar"/>
+      <attribute name="size" type="Long" value="4843"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.geo.store.hbase.provider.test"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.geo.store.hbase.provider.test"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201606161116"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api.query)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit)(version&gt;=4.12.0)(!(version&gt;=5.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.geo.store.hbase.provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="0.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="7f2454cd7345f1cc2d05df4910068b0b6a9ddd8e6a77095de6243c9e3cb1a1d9"/>
+      <attribute name="url" value="com.lunifera.geo.store.hbase.provider/com.lunifera.geo.store.hbase.provider-0.3.0.jar"/>
+      <attribute name="size" type="Long" value="36547"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.geo.store.hbase.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.geo.store.hbase.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.store.api"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.store.hbase.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+      <directive name="uses" value="com.lunifera.geo.store.api.dto,com.lunifera.geo.store.api.query"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.store.api.dto"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.store.hbase.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+      <directive name="uses" value="com.lunifera.geo.api.dto,org.osgi.dto"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.lunifera.geo.store.api.query"/>
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.geo.store.hbase.provider"/>
+      <attribute name="bundle-version" type="Version" value="0.3.0.201606161116"/>
+      <directive name="uses" value="com.lunifera.geo.store.api.dto"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="com.lunifera.geo.store.api.GeoStore"/>
+    </capability>
+    <capability namespace="osgi.implementation">
+      <attribute name="version" type="Version" value="0.3.0"/>
+      <attribute name="osgi.implementation" value="org.lunifera.geo.store"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="com.lunifera.geo.store.api.GeoStore"/>
+      <attribute name="limit" type="Long" value="100"/>
+      <attribute name="storetype" value="hbase"/>
+      <attribute name="zookeeperPort" type="Long" value="2181"/>
+      <attribute name="zookeeperUrl" value="localhost"/>
+      <attribute name="service.pid" value="com.lunifera.geo.store.hbase"/>
+      <directive name="uses" value="com.lunifera.geo.store.api"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.lunifera.geo.api.dto)"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api.dto)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.lunifera.geo.store.api.query)(version&gt;=0.3.0)(!(version&gt;=1.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hadoop.conf)(version&gt;=2.7.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hadoop.hbase)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hadoop.hbase.client)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.log)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.osgi.service.log.LogService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <attribute name="configuration_loc" value="configuration/configuration.json"/>
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.enroute.configurer)(&amp;(version&gt;=1.0.0)(!(version&gt;=2.0.0))))"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.osgi.service.log.LogService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="2.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="63c84291c2a0f4315ad2d664f1310eff4c5962af5a592e363085d1c06514c2a1"/>
+      <attribute name="url" value="com.lunifera.wrapping.jgeohash.provider/com.lunifera.wrapping.jgeohash.provider-2.3.0.jar"/>
+      <attribute name="size" type="Long" value="24694"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="2.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="2.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="de.alpharogroup.jgeohash"/>
+      <attribute name="version" type="Version" value="2.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="2.3.0.201606161116"/>
+      <directive name="uses" value="de.alpharogroup.jgeohash.api,de.alpharogroup.jgeohash.model"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="de.alpharogroup.jgeohash.api"/>
+      <attribute name="version" type="Version" value="2.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="2.3.0.201606161116"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="de.alpharogroup.jgeohash.distance"/>
+      <attribute name="version" type="Version" value="2.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="2.3.0.201606161116"/>
+      <directive name="uses" value="de.alpharogroup.jgeohash.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="de.alpharogroup.jgeohash.model"/>
+      <attribute name="version" type="Version" value="2.3.0"/>
+      <attribute name="bundle-symbolic-name" value="com.lunifera.wrapping.jgeohash.provider"/>
+      <attribute name="bundle-version" type="Version" value="2.3.0.201606161116"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
 </repository>
